@@ -1843,7 +1843,7 @@ terraform apply -auto-approve -no-color
 
 ```bash
 ANS_KEYPAIR="petclinic-ansible-test-dev.key"
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/${ANS_KEYPAIR} ubuntu@172.31.91.243 hostname
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/${ANS_KEYPAIR} ubuntu@172.31.84.175 hostname
 ```
   * Click `Save`
 
@@ -1855,12 +1855,12 @@ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/
 mkdir -p ansible/inventory
 ```
 
-- Prepare static inventory file with name of `hosts.ini` for Ansible under `ansible/inventory` folder using Docker machines private IP addresses.
+- Prepare static inventory file with name of `hosts.ini` for Ansible under `ansible/inventory` folder using kubernetes machines private IP addresses.
 
 ```ini
-172.31.91.243   ansible_user=ubuntu  
-172.31.87.143   ansible_user=ubuntu
-172.31.90.30    ansible_user=ubuntu
+172.31.84.175   ansible_user=ubuntu  
+172.31.88.208   ansible_user=ubuntu
+172.31.81.7    ansible_user=ubuntu
 ```
 
 - Commit the change, then push to the remote repo.
