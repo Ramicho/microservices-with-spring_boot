@@ -22,15 +22,10 @@
     shell: apt-get update
 
   - name: Install packages that allow apt to be used over HTTPS
-    apt:
-      name: "{{ packages }}"
-      state: present
-      update_cache: yes
-    vars:
-      packages:
-      - apt-transport-https  
-      - curl
-      - ca-certificates
+    shell: |
+      sudo apt-get install curl
+      sudo apt-get install apt-transport-https  
+      sudo apt-get install ca-certificates
 
   - name: update apt-get and install kube packages
     shell: |
