@@ -23,9 +23,9 @@
 
   - name: Install packages that allow apt to be used over HTTPS
     shell: |
-      sudo apt-get install curl
-      sudo apt-get install apt-transport-https  
-      sudo apt-get install ca-certificates
+      sudo apt-get install curl -y
+      sudo apt-get install apt-transport-https -y
+      sudo apt-get install ca-certificates -y
 
   - name: update apt-get and install kube packages
     shell: |
